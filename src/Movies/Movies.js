@@ -11,7 +11,7 @@ const Movies = ({movies}) => {
         path={movie.poster_path}
         title={movie.title}
         rating={Math.round(movie.average_rating)}
-        releaseDate={movie.release_date}
+        releaseDate={new Date(movie.release_date).toDateString()}
       />
     )
   })
