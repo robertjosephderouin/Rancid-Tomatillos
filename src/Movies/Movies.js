@@ -10,7 +10,7 @@ const Movies = ({movies}) => {
       <Card
         path={movie.poster_path}
         title={movie.title}
-        rating={movie.average_rating}
+        rating={Math.round(movie.average_rating)}
         releaseDate={movie.release_date}
       />
     )
