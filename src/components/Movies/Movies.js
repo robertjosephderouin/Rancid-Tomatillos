@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '../Card/Card';
-import movieData from '../movieData';
 import './Movies.css';
 
 const Movies = ({movies}) => {
