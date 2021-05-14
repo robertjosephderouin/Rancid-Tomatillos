@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import Spotlight from '../Spotlight/Spotlight';
+import './App.css';
 import { getMovies } from '../../api-calls';
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        <h1>Rancid Tomatillos</h1>
+        <h1 className='title'>Rancid Tomatillos</h1>
         {!this.state.movies.length && !this.state.error && <h2>Loading movies...</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.focus && <Movies movies={this.state.movies} focusOnFilm={this.focusOnFilm} />}
