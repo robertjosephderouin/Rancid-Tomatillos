@@ -1,7 +1,28 @@
+* {
+  font-family: "Open Sans";
+}
+
+body {
+  background-color: #FAFAFF
+}
+
 .App {
   margin-left: 20px;
 }
 
 .title {
-  text-align: center;
+  margin: 0;
+  margin-left: 40px;
+}
+
+.rancid {
+  position: relative;
+  right: 40px;
+  margin-top: 10px;
+}
+
+.tomatillos {
+  position: relative;
+  left: 15px;
+  margin-bottom: 10px;
 }
