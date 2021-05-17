@@ -24,12 +24,22 @@
   margin-bottom: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .spotlight-card{
+    width: 55%;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .spotlight-card{
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 425px) {
-
+  .spotlight-card{
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 375px) {
