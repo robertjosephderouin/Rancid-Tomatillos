@@ -1,0 +1,25 @@
+.spotlight-image {
+  width: 100%;
+}
+
+.spotlight-card {
+  text-align: center;
+  background-color: #fff;
+  border-radius: .4rem;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, .1);
+  cursor: pointer;
+  width: 48%;
+  font-size: 18px;
+}
+
+.spotlight-container {
+  display: flex;
+  justify-content: center;
+}
+
+.back-button {
+  padding: 5px;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
