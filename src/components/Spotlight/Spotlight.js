@@ -6,7 +6,7 @@ const Spotlight = ({focus, clearFocus}) => {
     return (
     <article className='spotlight-card' key={movie.id}>
       <img className='spotlight-image' src={movie.backdrop_path} alt={movie.title}/>
-      <h1>{movie.title}</h1>
+      <h2>{movie.title}</h2>
       <p>🍅 {Math.round(movie.average_rating)}</p>
       <p>Released {new Date(movie.release_date).toDateString()}</p>
       <button className='back-button' onClick={() => clearFocus()}>🔙</button>
