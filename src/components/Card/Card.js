@@ -5,9 +5,9 @@ const Card = ({ path, title, rating, releaseDate, focusOnFilm }) => {
   return (
     <article className='card' onClick={() => focusOnFilm(title)}>
       <img className='gallery-poster' src={path} alt={title}/>
-      <h3>{title}</h3>
-      <p>🍅 {rating}</p>
-      <p>Released {releaseDate}</p>
+      <h3 className='text'>{title}</h3>
+      <p className='text'>🍅 {rating}</p>
+      <p className='text'>Released {releaseDate}</p>
     </article>
   )
 }

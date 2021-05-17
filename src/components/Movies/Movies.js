@@ -12,6 +12,7 @@ const Movies = ({movies, focusOnFilm}) => {
         rating={Math.round(movie.average_rating)}
         releaseDate={new Date(movie.release_date).toDateString()}
         focusOnFilm={focusOnFilm}
+        key={movie.id}
       />
     )
   })
