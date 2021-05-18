@@ -3,6 +3,7 @@ import Movies from '../Movies/Movies';
 import Spotlight from '../Spotlight/Spotlight';
 import './App.css';
 import { getMovies } from '../../api-calls';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
