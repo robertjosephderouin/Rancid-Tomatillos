@@ -1,11 +1,9 @@
 .card {
   background-color: #fff;
   border-radius: .4rem;
-  overflow: hidden;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, .1);
   cursor: pointer;
-  height: 100vh;
-  width: 28vw;
+  width: 20vw;
 }
 
 .card:hover {
@@ -14,13 +12,42 @@
 }
 
 .gallery-poster {
+  border-radius: 10px;
   display: block;
   width: 100%;
-  height: 37rem;
   object-fit: cover;
   object-position: top;
 }
 
 .text {
   padding-left: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card{
+    width:25vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    background-color: #fff;
+    cursor: pointer;
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (max-width: 320px) {
+  .card{
+    margin-bottom: 10vw;
+    width:80vw;
+  }
 }

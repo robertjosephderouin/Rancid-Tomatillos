@@ -1,6 +1,44 @@
 .movies-container {
+  margin-left: 5vw;
+  margin-top: 2vw;
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  grid-template-columns: repeat(4, .2fr);
   align-items: start;
+}
+
+@media screen and (max-width: 1024px) {
+  .movies-container {
+    margin-left: 7vw;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(3, .2fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movies-container {
+    margin-left: 5vw;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(3, .2fr);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .movies-container {
+    margin-left: 1vw;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, .2fr);
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (max-width: 320px) {
+  .movies-container {
+    margin-left: 7vw;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(1, .2fr);
+  }
 }
