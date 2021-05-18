@@ -3,7 +3,8 @@ import Movies from '../Movies/Movies';
 import Spotlight from '../Spotlight/Spotlight';
 import './App.css';
 import { getMovies } from '../../api-calls';
-import { Route } from 'react-router-dom';
+import Home from '../Home/Home';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -35,12 +36,21 @@ class App extends Component {
   render() {
     return (
       <main className='App'>
-        <h1 className='title rancid'>🍅Rancid</h1>
-        <h1 className='title tomatillos'>Tomatillos🍅</h1>
         {!this.state.movies.length && !this.state.error && <h2>Loading movies...</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.focus && <Movies movies={this.state.movies} focusOnFilm={this.focusOnFilm} />}
-        {this.state.focus && <Spotlight focus={this.state.focus} clearFocus={this.clearFocus} />}
+        <Switch>
+        <Route exact path="/" render={() => {
+          return (
+            <section>
+              <Home />
+              <Movies movies={this.state.movies} focusOnFilm={this.focusOnFilm} />
+            </section>
+          )
+        }} />
+        <Redirect to='/' />
+        </Switch>
+        
+        // {this.state.focus && <Spotlight focus={this.state.focus} clearFocus={this.clearFocus} />}
       </main>
     )
   }
