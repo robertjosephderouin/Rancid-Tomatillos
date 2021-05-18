@@ -1,22 +1,17 @@
 import React from 'react';
 import './Spotlight.css';
+import { Link } from 'react-router-dom';
 
-const Spotlight = ({focus, clearFocus}) => {
-  const spotlightedMovie = focus.map(movie => {
-    return (
-    <article className='spotlight-card' key={movie.id}>
-      <img className='spotlight-image' src={movie.backdrop_path} alt={movie.title}/>
-      <h2>{movie.title}</h2>
-      <p>🍅 {Math.round(movie.average_rating)}</p>
-      <p>Released {new Date(movie.release_date).toDateString()}</p>
-      <button className='back-button' onClick={() => clearFocus()}>🔙</button>
-    </article>
-  )
-  })
-
+const Spotlight = ({ id, poster_path, backdrop_path, title, average_rating, release_date }) => {
   return (
     <div className='spotlight-container'>
-      {spotlightedMovie}
+    <article className='spotlight-card' key={id}>
+      <img className='spotlight-image' src={backdrop_path} alt={title}/>
+      <h2>{title}</h2>
+      <p>🍅 {Math.round(average_rating)}</p>
+      <p>Released {new Date(release_date).toDateString()}</p>
+      <Link to={'/'} className='back-button'>🔙</Link>
+    </article>
     </div>
   )
 }

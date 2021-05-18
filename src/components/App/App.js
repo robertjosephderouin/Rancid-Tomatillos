@@ -10,7 +10,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      focus: null,
       movies: [],
       error: ''
     }
@@ -24,15 +23,6 @@ class App extends Component {
       .catch(() => this.setState({ error: 'Something went wrong'}))
   }
 
-  focusOnFilm = (name) => {
-    const filteredMovies = this.state.movies.filter(movie => movie.title === name)
-    this.setState({ focus: filteredMovies })
-  }
-
-  clearFocus = () => {
-    this.setState({focus: null})
-  }
-
   render() {
     return (
       <main className='App'>
@@ -43,14 +33,18 @@ class App extends Component {
           return (
             <section>
               <Home />
-              <Movies movies={this.state.movies} focusOnFilm={this.focusOnFilm} />
+              <Movies movies={this.state.movies} />
             </section>
           )
         }} />
+
+        <Route exact path="/:id" render={({match}) => {
+          const { id } = match.params;
+          const findMovie = this.state.movies.find(movie => movie.id === parseInt(id))
+          return <Spotlight {...findMovie} />
+        }} />
         <Redirect to='/' />
         </Switch>
-        
-        // {this.state.focus && <Spotlight focus={this.state.focus} clearFocus={this.clearFocus} />}
       </main>
     )
   }
