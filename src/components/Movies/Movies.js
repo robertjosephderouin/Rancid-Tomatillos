@@ -7,7 +7,7 @@ const Movies = ({movies}) => {
 
   const movieCards = movies.map(movie => {
     return (
-      <Link to={`/${movie.id}`} style={{ textDecoration: 'none' }} key={movie.id}>
+      <Link className='link' to={`/${movie.id}`} key={movie.id}>
         <Card
           path={movie.poster_path}
           title={movie.title}
