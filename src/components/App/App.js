@@ -4,7 +4,7 @@ import Spotlight from '../Spotlight/Spotlight';
 import './App.css';
 import { getMovies } from '../../api-calls';
 import Home from '../Home/Home';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -43,7 +43,7 @@ class App extends Component {
           const findMovie = this.state.movies.find(movie => movie.id === parseInt(id))
           return <Spotlight {...findMovie} />
         }} />
-        <Redirect to='/' />
+        
         </Switch>
       </main>
     )
