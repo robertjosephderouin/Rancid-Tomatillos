@@ -3,12 +3,13 @@ import Movies from '../Movies/Movies';
 import Spotlight from '../Spotlight/Spotlight';
 import './App.css';
 import { getMovies } from '../../api-calls';
+import Home from '../Home/Home';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      focus: null,
       movies: [],
       error: ''
     }
@@ -22,24 +23,28 @@ class App extends Component {
       .catch(() => this.setState({ error: 'Something went wrong'}))
   }
 
-  focusOnFilm = (name) => {
-    const filteredMovies = this.state.movies.filter(movie => movie.title === name)
-    this.setState({ focus: filteredMovies })
-  }
-
-  clearFocus = () => {
-    this.setState({focus: null})
-  }
-
   render() {
     return (
       <main className='App'>
-        <h1 className='title rancid'>🍅Rancid</h1>
-        <h1 className='title tomatillos'>Tomatillos🍅</h1>
         {!this.state.movies.length && !this.state.error && <h2>Loading movies...</h2>}
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.focus && <Movies movies={this.state.movies} focusOnFilm={this.focusOnFilm} />}
-        {this.state.focus && <Spotlight focus={this.state.focus} clearFocus={this.clearFocus} />}
+        <Switch>
+        <Route exact path="/" render={() => {
+          return (
+            <section>
+              <Home />
+              <Movies movies={this.state.movies} />
+            </section>
+          )
+        }} />
+
+        <Route exact path="/:id" render={({match}) => {
+          const { id } = match.params;
+          const findMovie = this.state.movies.find(movie => movie.id === parseInt(id))
+          return <Spotlight {...findMovie} />
+        }} />
+        
+        </Switch>
       </main>
     )
   }

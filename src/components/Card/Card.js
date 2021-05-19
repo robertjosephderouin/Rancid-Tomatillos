@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ path, title, rating, releaseDate, focusOnFilm }) => {
+const Card = ({ path, title, rating, releaseDate }) => {
   return (
-    <article tabindex='0' className='card' onKeyDown={(e) => e.keyCode === 13 && focusOnFilm(title)} onClick={() => focusOnFilm(title)}>
+    <article className='card'>
       <img className='gallery-poster' src={path} alt={title}/>
       <h2 className='text'>{title}</h2>
       <p className='text'>🍅 {rating}</p>

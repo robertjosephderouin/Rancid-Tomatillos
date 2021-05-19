@@ -9,36 +9,3 @@ body {
 .App {
   margin-left: 20px;
 }
-
-.title {
-  text-align: center;
-  margin: 0;
-}
-
-.rancid {
-  position: relative;
-  right: 40px;
-  margin-top: 10px;
-}
-
-.tomatillos {
-  position: relative;
-  left: 15px;
-  margin-bottom: 10px;
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 425px) {
-
-}
-
-@media screen and (max-width: 375px) {
-
-}
-
-@media screen and (max-width: 320px) {
-
-}

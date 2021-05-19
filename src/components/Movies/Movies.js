@@ -1,19 +1,20 @@
 import React from 'react';
 import Card from '../Card/Card';
 import './Movies.css';
+import { Link } from 'react-router-dom';
 
-const Movies = ({movies, focusOnFilm}) => {
+const Movies = ({movies}) => {
 
   const movieCards = movies.map(movie => {
     return (
-      <Card
-        path={movie.poster_path}
-        title={movie.title}
-        rating={Math.round(movie.average_rating)}
-        releaseDate={new Date(movie.release_date).toDateString()}
-        focusOnFilm={focusOnFilm}
-        key={movie.id}
-      />
+      <Link className='link' to={`/${movie.id}`} key={movie.id}>
+        <Card
+          path={movie.poster_path}
+          title={movie.title}
+          rating={Math.round(movie.average_rating)}
+          releaseDate={new Date(movie.release_date).toDateString()}
+        />
+      </Link>
     )
   })
 

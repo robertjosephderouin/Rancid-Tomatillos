@@ -4,7 +4,14 @@
   display: grid;
   grid-gap: 3rem;
   grid-template-columns: repeat(4, .2fr);
+  grid-auto-rows: 1fr;
   align-items: start;
+}
+
+.link {
+  height: 100%;
+  text-decoration: none;
+  color: #000000;
 }
 
 @media screen and (max-width: 1024px) {
