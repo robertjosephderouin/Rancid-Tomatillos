@@ -43,4 +43,11 @@ describe('Dashboard', () => {
       .get('h2').contains('Loading')
   });
 
+  it('it should display an error of something went wrong when something goes wrong with the host', () => {
+    const baseURL = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies';
+    cy.intercept('GET', `${baseURL}`, {})
+      .visit('http://localhost:3000/')
+      .get('h3').contains('Something went wrong')
+  });
+
 });

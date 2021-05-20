@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <main className='App'>
         {!this.state.movies.length && !this.state.error && <h2>Loading movies...</h2>}
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <h3>{this.state.error}</h3>}
         <Switch>
         <Route exact path="/" render={() => {
           return (
@@ -43,7 +43,7 @@ class App extends Component {
           const findMovie = this.state.movies.find(movie => movie.id === parseInt(id))
           return <Spotlight {...findMovie} />
         }} />
-        
+
         </Switch>
       </main>
     )
