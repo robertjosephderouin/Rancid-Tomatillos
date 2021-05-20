@@ -38,6 +38,13 @@ describe('Spotlight', () => {
         .get('h2').contains('Money Plane')
   });
 
+  it('on spot light page clicking the back button returns you to the main page', () => {
+
+    cy.visit('http://localhost:3000/')
+      cy.get('a[href*="694919"]').click()
+        .get('.back-button').click()
+  });
+
   it('if a user types in the wrong url it redirects back to the home page', () => {
     cy.visit('http://localhost:3000/fgsdfg')
   });
