@@ -1,7 +1,7 @@
 
 describe('Dashboard', () => {
 
-  beforeEach(() => {
+  it('it should display the data provided as movie cards', () => {
     const baseURL = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies';
     cy.intercept('GET', `${baseURL}`, {
       'movies': [
@@ -31,13 +31,16 @@ describe('Dashboard', () => {
     },
     ]
     })
-  })
-
-
-
-  it('it should display the data provided as movie cards', () => {
     cy.visit('http://localhost:3000/')
       .get('h1').contains('Rancid')
-      .get('h2').contains('Loading Movies')
+      .get('h1').contains('Tomatillos')
+      .get('article')
+
   });
+
+  it('it should display Loading if no movies are retrieved', () => {
+    cy.visit('http://localhost:3000/')
+      .get('h2').contains('Loading')
+  });
+
 });
