@@ -38,8 +38,8 @@ describe('Spotlight', () => {
         .get('h2').contains('Money Plane')
   });
 
-  it('if a user types in the wrong spot light id link it redirects back to the home page', () => {
-
+  it('if a user types in the wrong url it redirects back to the home page', () => {
+    cy.visit('http://localhost:3000/fgsdfg')
   });
 
 });
