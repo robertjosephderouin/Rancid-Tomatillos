@@ -1,6 +1,6 @@
 # Rancid Tomatillos
 
-A [Front-End Project] by [Rachel Hendricks](https://github.com/rhen92) & [Robert DeRouin](https://github.com/robertjosephderouin)
+A Front-End Project by [Rachel Hendricks](https://github.com/rhen92) & [Robert DeRouin](https://github.com/robertjosephderouin)
 
 * Project Manager: [Leta Keane](https://github.com/letakeane) &[Scott Ertmer](https://github.com/sertmer)
 
@@ -14,16 +14,9 @@ A [Front-End Project] by [Rachel Hendricks](https://github.com/rhen92) & [Robert
 
 Rancid Tomatillos is a mock Rotten Tomatoes / IMDB style movie gallery.  Users can look at movies, see their average rating and click for more details.
 
-## Dashboard
-
-
-
-## Spotlight
-
-
-
 ## Functionality
 ![Functionality](https://media.giphy.com/media/S3P6DLcIjKAa229byH/giphy.gif)
+
 * Current:
   - Users on the home page will see a gallery of movie posters with titles, average rating, and date of release.
   - Users can click on a movie poster to spotlight that movie and see an alternate production photo.
