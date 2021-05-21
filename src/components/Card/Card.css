@@ -30,10 +30,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-
-}
-
 @media screen and (max-width: 425px) {
   .card {
     background-color: #fff;
@@ -42,13 +38,17 @@
   }
 }
 
-@media screen and (max-width: 375px) {
-
+@media screen and (max-width: 425px) {
+  .card {
+    width: 42vw;
+    height: 89vh;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .card{
     margin-bottom: 10vw;
     width:80vw;
+    height: 91vh;
   }
 }

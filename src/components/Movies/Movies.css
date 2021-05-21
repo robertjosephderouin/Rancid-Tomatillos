@@ -38,10 +38,6 @@
   }
 }
 
-@media screen and (max-width: 375px) {
-
-}
-
 @media screen and (max-width: 320px) {
   .movies-container {
     margin-left: 7vw;
