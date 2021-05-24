@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Spotlight.css';
 import { getOverview } from '../../api-calls';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-class Spotlight extends React.Component {
+class Spotlight extends Component {
   constructor({id}) {
     super();
     this.state = {
       id: id,
       spotLight: null,
       error: '',
+      isLoaded: false,
     }
   }
 
@@ -18,12 +19,20 @@ class Spotlight extends React.Component {
       .then(data => {
         this.setState({ spotLight: data.movie })
       })
-      .catch(() => this.setState({ error: 'Something went wrong'}))
+      .catch(() => {
+        this.setState({ error: 'Something went wrong'})
+      })
+      .finally(() => {
+        this.setState({ isLoaded: true })
+      })
   }
 
   render() {
     return (
       <div className='spotlight-container'>
+      {!this.state.isLoaded && <h2>Loading spotlight...</h2>}
+      {!this.state.error && this.state.isLoaded && !this.state.spotLight && <Redirect to='/' />}
+      {this.state.error && <h3>{this.state.error}</h3>}
         <article className='spotlight-card' key={this.state.spotLight?.id}>
           <img className='spotlight-image' src={this.state.spotLight?.backdrop_path} alt={this.state.spotLight?.title}/>
           <h2>{this.state.spotLight?.title}</h2>
@@ -33,7 +42,7 @@ class Spotlight extends React.Component {
           <Link to={'/'} className='back-button'>🔙</Link>
         </article>
       </div>
-    )
+    );
   }
 }
 
