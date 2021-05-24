@@ -40,10 +40,8 @@ class App extends Component {
 
         <Route exact path="/:id" render={({match}) => {
           const { id } = match.params;
-          const findMovie = this.state.movies.find(movie => movie.id === parseInt(id))
-          return <Spotlight {...findMovie} />
+          return <Spotlight id={id} />
         }} />
-
         </Switch>
       </main>
     )
